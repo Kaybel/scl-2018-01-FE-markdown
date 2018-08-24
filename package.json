@@ -1,8 +1,11 @@
 {
-  "name": "scl-2018-01-fe-markdown",
+  "name": "libreria",
   "version": "0.0.1",
   "description": "trabajo que extrae links en formato md",
   "main": "index.js",
+  "bin": {
+    "libreria": "./src/js/index.js"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -22,9 +25,11 @@
   },
   "homepage": "https://github.com/Kaybel/scl-2018-01-FE-markdown#readme",
   "dependencies": {
-    "marked": "^0.5.0"
+    "marked": "^0.5.0",
+    "node-fetch": "^2.2.0"
   },
   "devDependencies": {
+    "eslint": "^5.4.0",
     "jest": "^23.5.0"
   }
 }

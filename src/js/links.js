@@ -1,5 +1,8 @@
-//Es necesario que instales marked como dependencia de tu proyecto
-//npm install --save marked
+const fs = require('fs'); // importa la info del fyleSistem, permite ingresar al archivo readme
+const [, , ...args] = process.argv; // para guardar lo que la persona escribe 
+let prueba = fs.readFileSync('README.md'); // mostrar el readme en la terminal
+console.log(prueba)
+
 const Marked = require('marked');
 
 // Función necesaria para extraer los links usando marked
@@ -17,23 +20,29 @@ function markdownLinkExtractor(markdown) {
   Marked.InlineLexer.rules.gfm.link = linkWithImageSizeSupport;
   Marked.InlineLexer.rules.breaks.link = linkWithImageSizeSupport;
 
-  renderer.link = function(href, title, text) {
+  renderer.link = function (href, title, text) {
     links.push({
       href: href,
       text: text,
       title: title,
     });
   };
-  renderer.image = function(href, title, text) {
-      // Remove image size at the end, e.g. ' =20%x50'
-      href = href.replace(/ =\d*%?x\d*%?$/, '');
-      links.push({
-        href: href,
-        text: text,
-        title: title,
-      });
+  renderer.image = function (href, title, text) {
+    // Remove image size at the end, e.g. ' =20%x50'
+    href = href.replace(/ =\d*%?x\d*%?$/, '');
+    links.push({
+      href: href,
+      text: text,
+      title: title,
+    });
   };
-  Marked(markdown, {renderer: renderer});
+  Marked(markdown, { renderer: renderer });
 
   return links;
 };
+
+
+
+// DEBO ENTRAR A LA CARPETA QUE CONTIENE LOS MD
+// DEBO HACER PATHJOIN DE TODOS LOS ARCHIVOS MD
+// PROCESS.CWD
