@@ -1,4 +1,4 @@
-const fs = require('fs'); // importa la info del fyleSistem, permite ingresar al archivo readme
+const fs = require('fs-extra'); // importa la info del fyleSistem, permite ingresar al archivo readme
 const [, , ...args] = process.argv; // para guardar lo que la persona escribe 
 let prueba = fs.readFileSync('README.md'); // mostrar el readme en la terminal
 console.log(prueba)

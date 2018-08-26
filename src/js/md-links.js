@@ -3,11 +3,13 @@ function archivo(link) {
     return true;
   }
 }
+
 function link(link) {
   if (link.indexOf('http') > 0) {
     return true;
   }
 }
+
 function rutaRelativa(rel) {
   if (rel.indexOf('/', 0) <= 0) {
     return true;
@@ -23,12 +25,11 @@ function rutaAbsoluta(abs) {
     console.log('Relativa');
   }
 }
+
 function ok() {
-  const loadPage = 0;
-  if (loadPage >= 200 && loadPage < 300) {
-    return true;
-  }
+  
 }
+
 function strg(argv) {
   // recibir los strings escritos en la terminal (paths)
   const [, , ...args] = process.argv;
