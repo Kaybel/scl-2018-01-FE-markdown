@@ -1,7 +1,3 @@
-const fs = require('fs-extra'); // importa la info del fyleSistem, permite ingresar al archivo readme
-const [, , ...args] = process.argv; // para guardar lo que la persona escribe 
-let prueba = fs.readFileSync('README.md'); // mostrar el readme en la terminal
-console.log(prueba)
 
 const Marked = require('marked');
 
@@ -41,8 +37,3 @@ function markdownLinkExtractor(markdown) {
   return links;
 };
 
-
-
-// DEBO ENTRAR A LA CARPETA QUE CONTIENE LOS MD
-// DEBO HACER PATHJOIN DE TODOS LOS ARCHIVOS MD
-// PROCESS.CWD
