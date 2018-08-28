@@ -41,14 +41,4 @@ const validate = ((link) => {
   }
 });
 
-const tittle = (() => {
-  forEach(element => {
-
-  });
-});
-
-
-// recorrer con forEach para separar titulo del texto
-// hacer fetch de 200 ok
-// hacer push de 200 ok
 // color a la terminal

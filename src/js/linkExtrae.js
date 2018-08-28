@@ -33,25 +33,50 @@ function markdownLinkExtractor(markdown) {
   Marked.InlineLexer.rules.gfm.link = linkWithImageSizeSupport;
   Marked.InlineLexer.rules.breaks.link = linkWithImageSizeSupport;
 
-  renderer.link = function(href, title, text) {
+  renderer.link = function(href, title, text, status) {
     links.push({
       href: href,
       title: title,
       text: text,
+      status: status,
     });
   };
 
-  renderer.image = function(href, title, text) {
+  renderer.image = function(href, title, text, status) {
     // Remove image size at the end, e.g. ' =20%x50'
     href = href.replace(/ =\d*%?x\d*%?$/, '');
     links.push({
       href: href,
       title: title,
       text: text,
+      status: status,
     });
   };
   Marked(markdown, { renderer: renderer });
   console.log(links);
+
+  // recorrer con forEach para separar titulo del texto
+
+  const tittle = ((element, index, array) => {
+    forEach(element => {
+      
+    });
+  });
+
+  // hacer fetch de 200 ok
+
+  const linkOk = (() => {
+    const fetch = require('node-fetch');
+
+    fetch(`${links.href}`)
+      .then((response) => {
+        console.log(response);
+      });
+  });
+
+  // hacer push de 200 ok
+
+
   return links;
 };
 
