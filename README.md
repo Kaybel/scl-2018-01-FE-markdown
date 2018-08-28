@@ -209,8 +209,9 @@ para usarlo programáticamente.
 ## Hacker edition
 
 - Detectar y recorrer carpetas (recursivamente)
-- Agregar una opción `--stats` para mostrar estadísticas del archivo, como
-cuántos links encontró.
+
+- Agregar una opción `--stats` para mostrar estadísticas del archivo, como cuántos links encontró.
+
 - Integración continua con Travis o Circle CI.
 
 ## Pistas / Tips / Recursos
@@ -226,6 +227,7 @@ cuántos links encontró.
 - [Linea de comando CLI](https://medium.com/netscape/a-guide-to-create-a-nodejs-command-line-package-c2166ad0452e)
 
 ### Función que extrae links
+
 ```javascript
 //Es necesario que instales marked como dependencia de tu proyecto
 //npm install --save marked

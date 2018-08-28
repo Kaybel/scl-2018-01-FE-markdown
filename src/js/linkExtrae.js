@@ -36,17 +36,18 @@ function markdownLinkExtractor(markdown) {
   renderer.link = function(href, title, text) {
     links.push({
       href: href,
-      text: text,
       title: title,
+      text: text,
     });
   };
+
   renderer.image = function(href, title, text) {
     // Remove image size at the end, e.g. ' =20%x50'
     href = href.replace(/ =\d*%?x\d*%?$/, '');
     links.push({
       href: href,
-      text: text,
       title: title,
+      text: text,
     });
   };
   Marked(markdown, { renderer: renderer });

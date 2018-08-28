@@ -26,3 +26,29 @@ if (!path.isAbsolute(pathAbs)) {
   // une las rutas
   take(joinPath);
 }
+
+const validate = ((link) => {
+  let option = {};
+  if (process.argv('--validate') === true) {
+    // aqui va funcion para validar los links y se "pushea" al obj
+
+    const fetch = require('node-fetch');
+
+    fetch('aquivaellink')
+      .then((response) => {
+        console.log(response);
+      });
+  }
+});
+
+const tittle = (() => {
+  forEach(element => {
+
+  });
+});
+
+
+// recorrer con forEach para separar titulo del texto
+// hacer fetch de 200 ok
+// hacer push de 200 ok
+// color a la terminal
