@@ -16,14 +16,14 @@ function markdownLinkExtractor(markdown) {
   Marked.InlineLexer.rules.gfm.link = linkWithImageSizeSupport;
   Marked.InlineLexer.rules.breaks.link = linkWithImageSizeSupport;
 
-  renderer.link = function (href, title, text) {
+  renderer.link = function(href, title, text) {
     links.push({
       href: href,
       text: text,
       title: title,
     });
   };
-  renderer.image = function (href, title, text) {
+  renderer.image = function(href, title, text) {
     // Remove image size at the end, e.g. ' =20%x50'
     href = href.replace(/ =\d*%?x\d*%?$/, '');
     links.push({
@@ -37,4 +37,4 @@ function markdownLinkExtractor(markdown) {
   return links;
 };
 
-module.exports=markdownLinkExtractor;
+module.exports = markdownLinkExtractor;

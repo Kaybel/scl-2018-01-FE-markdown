@@ -13,7 +13,7 @@ if (!path.isAbsolute(pathAbs)) {
   // ubica la ruta ingresada en la terminal.
   let joinPath = path.join(ubicPath, pathAbs);
   // une las rutas
-  takes(joinPath);
+  take(joinPath);
 }
 
 const take = ((ruta) => {
@@ -26,10 +26,3 @@ const take = ((ruta) => {
     markdownLinkExtractor(data);
   });
 });
-
-// mostrar el readme en la terminal
-console.log(pathAbs);
-
-// DEBO ENTRAR A LA CARPETA QUE CONTIENE LOS MD
-// DEBO HACER PATHJOIN DE TODOS LOS ARCHIVOS MD
-// PROCESS.CWD
