@@ -37,3 +37,4 @@ function markdownLinkExtractor(markdown) {
   return links;
 };
 
+module.exports=markdownLinkExtractor;

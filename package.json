@@ -1,8 +1,8 @@
 {
   "name": "libreria",
   "version": "0.0.1",
-  "description": "trabajo que extrae links en formato md",
-  "main": "index.js",
+  "description7": "trabajo que extrae links en formato md",
+  "main": "src/js/index.js",
   "bin": {
     "libreria": "./src/js/index.js"
   },
