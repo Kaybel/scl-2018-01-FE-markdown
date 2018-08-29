@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-const infoPath = require('../js/linkExtrae');
+const infoPath = require('../js/promise');
 // para guardar lo que la persona escribe 
 const path = require('path');
 // importa la info del fyleSistem, permite ingresar al archivo readme
