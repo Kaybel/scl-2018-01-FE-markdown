@@ -36,7 +36,7 @@ function markdownLinkExtractor(markdown) {
   renderer.link = function(href, title, text, status) {
     links.push({
       href: href,
-      title: title,
+      // title: title,
       text: text,
       status: status,
     });
@@ -47,35 +47,23 @@ function markdownLinkExtractor(markdown) {
     href = href.replace(/ =\d*%?x\d*%?$/, '');
     links.push({
       href: href,
-      title: title,
+      // title: title,
       text: text,
       status: status,
     });
   };
   Marked(markdown, { renderer: renderer });
-  console.log(links);
-
-  // recorrer con forEach para separar titulo del texto
-
-  const tittle = ((element, index, array) => {
-    forEach(element => {
-      
-    });
-  });
+  // console.log(links);
 
   // hacer fetch de 200 ok
 
-  const linkOk = (() => {
-    const fetch = require('node-fetch');
+  const fetch = require('node-fetch');
 
-    fetch(`${links.href}`)
-      .then((response) => {
-        console.log(response);
-      });
-  });
-
+  fetch('https://github.com/Kaybel/scl-2018-01-FE-markdown/blob/master/src/js/fetch.js')
+    .then((response) => {
+      console.log(response);
+    });
   // hacer push de 200 ok
-
 
   return links;
 };

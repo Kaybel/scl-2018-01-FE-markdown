@@ -1,4 +1,5 @@
 #! /usr/bin/env node
+
 const markdownLinkExtractor = require('../js/linkExtrae');
 // para guardar lo que la persona escribe 
 const path = require('path');
@@ -42,3 +43,4 @@ const validate = ((link) => {
 });
 
 // color a la terminal
+

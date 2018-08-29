@@ -35,6 +35,7 @@ function strg(argv) {
   const [, , ...args] = process.argv;
   console.log(args);
 }
+
 function runMd(ingresoAMd) {
   // para abrir el archivo md en terminal
   let readme = fs.readFileSync('README.md');

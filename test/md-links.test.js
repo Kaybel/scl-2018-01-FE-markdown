@@ -1,7 +1,7 @@
 // ruta absoluta
 const rutaAbsoluta = require('../src/js/md-links').rutaAbsoluta;
 test('debería devolver true si el archivo es de ruta absoluta', () => {
-  expect(archivo).toBeTruthy();
+  expect(rutaAbsoluta).toBeTruthy();
 });
 
 // recibir los strings escritos en la terminal (paths)
