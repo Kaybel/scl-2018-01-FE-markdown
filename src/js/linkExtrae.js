@@ -1,18 +1,33 @@
 
 const Marked = require('marked');
+const fetch = require('node-fetch');
+// file system con mas opciones
+const fs = require('fs-extra');
 
-// nueva promesa
-function readFilePromise(filePath) {
+function infoPath(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf-8', (error, data) => {
       if (error) {
         return reject(error);
-        // Sabemos que hay un error, así que rechazamos la promesa
-        // Si hay error, también nos aseguramos con return de no seguir ejecutando nada más en esta función
       }
+      let links = markdownLinkExtractor(data);
+      let promise = [];
+      links.forEach((url) => {
+        promise.push(fetch(url.href)
+          .then((response) => {
+            url.status = response.status;
+            return url;
+          })
+          .catch((err) => {
+            url.status = 'fail';
+            return url;
+          }));
+      });
+      Promise.all(promise).then((values) => {
+        resolve(links);
+      }).catch((err) => {
 
-      return resolve(data);
-      // En caso de que no haya error resolvemos la promesa con los datos que recibimos en el callback
+      });
     });
   });
 };
@@ -33,39 +48,26 @@ function markdownLinkExtractor(markdown) {
   Marked.InlineLexer.rules.gfm.link = linkWithImageSizeSupport;
   Marked.InlineLexer.rules.breaks.link = linkWithImageSizeSupport;
 
-  renderer.link = function(href, title, text, status) {
+  renderer.link = function(href, title, text) {
     links.push({
       href: href,
       // title: title,
       text: text,
-      status: status,
     });
   };
 
-  renderer.image = function(href, title, text, status) {
+  renderer.image = function(href, title, text) {
     // Remove image size at the end, e.g. ' =20%x50'
     href = href.replace(/ =\d*%?x\d*%?$/, '');
     links.push({
       href: href,
       // title: title,
       text: text,
-      status: status,
     });
   };
   Marked(markdown, { renderer: renderer });
-  // console.log(links);
-
-  // hacer fetch de 200 ok
-
-  const fetch = require('node-fetch');
-
-  fetch('https://github.com/Kaybel/scl-2018-01-FE-markdown/blob/master/src/js/fetch.js')
-    .then((response) => {
-      console.log(response);
-    });
-  // hacer push de 200 ok
 
   return links;
 };
 
-module.exports = markdownLinkExtractor;
+module.exports = infoPath;
