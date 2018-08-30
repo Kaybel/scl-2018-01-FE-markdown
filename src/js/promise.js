@@ -21,14 +21,19 @@ function infoPath(filePath) {
         // se ingresa al href del link el cual posee la info del status del link y esta info se pushea a promise que es un array vacio
         promise.push(fetch(url.href)
           .then((response) => {
-            // se crea la key status y se le otorga la info extraida anteriormente como value
+            // se crea la key y se le otorga la info extraida anteriormente como value
+            url.filePath = response.filePath;
             url.status = response.status;
+            url.statusText = response.statusText;
             // se retorna url dado que ahora el mismo posee el status, si no se retorna no va a "actualizar" la info de status en url. 
             return url;
           })
           // se crea el catch para que, si la url esta rota indique "fail"
           .catch((err) => {
+            url.filePath = 'fail';
             url.status = 'fail';
+            url.statusText = 'fail';
+            url.fileLine = 'fail';
             return url;
           }));
       });
