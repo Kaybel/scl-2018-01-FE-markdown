@@ -22,7 +22,7 @@ function mdlinks() {
   // une las rutas que ingresa el usuario con la ruta absoluta de la terminal
   infoPath(joinPath).then((value) => {
     // se crea la promesa llamada del js promise para que imprima la info en la terminal.
-    console.log(Object.values(value));
+    console.log(value);
     // la info.
   });
 };

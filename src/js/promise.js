@@ -33,7 +33,6 @@ function infoPath(filePath) {
             url.filePath = 'fail';
             url.status = 'fail';
             url.statusText = 'fail';
-            url.fileLine = 'fail';
             return url;
           }));
       });
