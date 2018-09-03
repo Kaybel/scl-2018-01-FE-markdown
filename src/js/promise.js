@@ -22,7 +22,7 @@ function infoPath(filePath) {
         promise.push(fetch(url.href)
           .then((response) => {
             // se crea la key y se le otorga la info extraida anteriormente como value
-            url.filePath = response.filePath;
+            // url.filePath = response.filePath;
             url.status = response.status;
             url.statusText = response.statusText;
             // se retorna url dado que ahora el mismo posee el status, si no se retorna no va a "actualizar" la info de status en url. 
@@ -30,7 +30,7 @@ function infoPath(filePath) {
           })
           // se crea el catch para que, si la url esta rota indique "fail"
           .catch((err) => {
-            url.filePath = 'fail';
+            // url.filePath = 'fail';
             url.status = 'fail';
             url.statusText = 'fail';
             return url;

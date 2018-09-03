@@ -9,7 +9,7 @@ const [, , ...args] = process.argv;
 // los , , ... signifca que va a agrupar varia info, no una sola, plural ! 
 let pathAbs = args[0];
 // colores 
-let colors = require('colors');
+// let colors = require('colors');
 // obtiene la ruta absoluta porque la inicializa en 0, / . 
 if (!path.isAbsolute(pathAbs)) {
   mdlinks();
