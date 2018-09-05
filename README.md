@@ -12,6 +12,13 @@
 
 0.0.1
 
+`colores`
+
+el color azul se utiliza para mostrar el link,
+el color verde se utiliza para el texto del link,
+el color blanco para el status, si se encuentra en "200" quiere decir que esta bien y puede ingresar al link sin inconvenientes,
+el color cyan (statusText) confirma la informacion del status.
+
 `dependencias`
 
   fs-extra: ^7.0.0
