@@ -27,7 +27,9 @@ function rutaAbsoluta(abs) {
 }
 
 function ok() {
-  
+  if (url.status = response.status) {
+    return true;
+  }
 }
 
 function strg(argv) {

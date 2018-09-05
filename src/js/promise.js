@@ -39,6 +39,8 @@ function infoPath(filePath) {
       // promise all toma en cuenta todas las funciones y sus valores para devolver una promesa global.
       Promise.all(promise).then((values) => {
         resolve(links);
+      }).catch((err) => {
+        console.log(error);
       });
     });
   });

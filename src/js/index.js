@@ -9,6 +9,7 @@ const [, , ...args] = process.argv;
 // los , , ... signifca que va a agrupar varia info, no una sola, plural ! 
 let pathAbs = args[0];
 // colores 
+let colors = require('colors');
 // let colors = require('colors');
 // obtiene la ruta absoluta porque la inicializa en 0, / . 
 if (!path.isAbsolute(pathAbs)) {
@@ -22,7 +23,9 @@ function mdlinks() {
   // une las rutas que ingresa el usuario con la ruta absoluta de la terminal
   infoPath(joinPath).then((value) => {
     // se crea la promesa llamada del js promise para que imprima la info en la terminal.
-    console.log(value);
+    value.forEach(function(element) {
+      console.log('href : '.blue + element.href.blue + ' text : '.green + element.text.green + ' Status : ' + element.status + ' StatusText : '.cyan + element.statusText.cyan);
+    });
     // la info.
   });
 };
