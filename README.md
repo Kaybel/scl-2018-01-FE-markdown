@@ -31,3 +31,6 @@ el color cyan (statusText) confirma la informacion del status.
 `Planificación en GitHub`
 
 https://github.com/Kaybel/scl-2018-01-FE-markdown
+
+`npm`
+https://www.npmjs.com/package/libreriakaybel
